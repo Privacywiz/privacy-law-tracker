@@ -1,5 +1,5 @@
 {
-  "synced": "2026-10-13T19:26:30.817Z",
+  "synced": "2026-10-20T14:22:24.264Z",
   "source": "Airtable: Privacy Law Tracker",
   "laws": [
     {
@@ -15,7 +15,7 @@
       "enforcementDate": null,
       "enforcer": "FTC (proposed); state AGs (proposed)",
       "threshold": "Entities subject to FTC jurisdiction that collect or process covered data; small businesses (under $40M revenue, under 200K consumers) largely exempt",
-      "summary": "Bipartisan federal privacy bill introduced in 2024 that passed committee but stalled on the House floor. Would establish a national baseline with data minimization, consumer rights, private right of action, and preemption of most state privacy laws. As of October 2026, has not been reintroduced in the 119th Congress. Its fate and any successor bill remain the most-watched development in U.S. privacy law. Would preempt CCPA/CPRA if passed in its 2024 form.",
+      "summary": "Bipartisan federal privacy bill introduced in 2024 that passed committee but stalled on the House floor. Would establish a national baseline with data minimization, consumer rights, private right of action, and preemption of most state privacy laws. APRA hasn't been reintroduced in the 119th Congress. The likeliest successor is House Republicans' SECURE Data Act (H.R. 8413), introduced April 22, 2026. It would preempt almost all state privacy laws and be enforced by the FTC and state AGs. A subcommittee hearing was held June 3, 2026, but no markup has been scheduled, and the 119th Congress ends January 3, 2027.",
       "build": "Not law. Nothing here is required today. Design ahead by collecting only the data each feature needs; data minimization is the core of every federal proposal and already law in Maryland.",
       "next": null,
       "reviewed": null,
@@ -55,7 +55,7 @@
       "threshold": "For-profit businesses meeting any: $25M+ annual revenue; buys/sells/receives data on 100K+ CA consumers/year; derives 50%+ revenue from selling personal data",
       "summary": "California's privacy law, expanded by the CPRA (one statute; this record covers both). Covers sharing for cross-context advertising, not just sales. The CPPA's 2026 regulations add risk assessments, cybersecurity audits for larger businesses, and rules for automated decision-making technology (ADMT compliance from January 1, 2027). Limited private right of action for data breaches.",
       "build": "- \"Do Not Sell or Share My Personal Information\" link in the footer (or one combined opt-out link)\n- \"Limit the Use of My Sensitive Personal Information\" link if you use sensitive data beyond what's needed to provide the service\n- Treat Global Privacy Control (GPC) browser signals as a valid opt-out, with no extra steps\n- Notice at collection shown at or before the point data is collected (sign-up forms, SDKs, apps)\n- Privacy policy updated at least every 12 months, including retention periods per data category\n- At least two ways to submit requests; confirm receipt within 10 business days, respond within 45 days, process opt-outs within 15 business days\n- Access, deletion, correction, and portability workflows with identity verification\n- No dark patterns: opting out can't take more steps than opting in\n- Data minimization: collect only what is reasonably necessary for disclosed purposes\n- Risk assessments before high-risk processing; ADMT notice and opt-out for significant decisions from January 1, 2027\n- CCPA-compliant contracts with service providers, contractors, and third parties\n- No penalty or degraded service for exercising rights (financial incentives need a notice)",
-      "next": "January 1, 2027: automated decision-making technology (ADMT) notice, opt-out and access rules apply.",
+      "next": "January 1, 2027: automated decision-making technology (ADMT) notice, opt-out and access rules apply. Also January 1, 2027 (SB 923): the deletion right covers personal information collected about a consumer from any source, including data brokers and partners, and online-only businesses must offer a web form or portal for requests, not just email.",
       "reviewed": null,
       "checker": {
         "min": 100000,
@@ -129,7 +129,7 @@
       "enforcementDate": null,
       "enforcer": "Federal Trade Commission (FTC)",
       "threshold": "As proposed: operators of websites and online services directed to children under 13 or teens under 17, or with actual knowledge (or knowledge fairly implied) of users under 17",
-      "summary": "NOT LAW. The Children and Teens' Online Privacy Protection Act passed the Senate unanimously on March 5, 2026 and is stalled in the House as of mid-2026. If enacted, it would extend COPPA protections to teens 13-16 and ban targeted advertising to minors. Product teams should design for it but are not yet bound by it. The binding change this year is the FTC's amended COPPA Rule (see COPPA record), enforceable April 22, 2026.",
+      "summary": "NOT LAW. The Children and Teens' Online Privacy Protection Act (S. 836) passed the Senate unanimously on March 5, 2026. On June 29, 2026 the House passed its own package, the KIDS Act (H.R. 7757), 267-117. The KIDS Act builds on COPPA 2.0: it covers children under 14 and teens 14 to 17, applies when an operator knows or should have known a user's age, and bans targeted advertising to minors. The two chambers haven't reconciled their bills, and the 119th Congress ends January 3, 2027. Product teams should design for it but are not yet bound by it. The binding change this year is the FTC's amended COPPA Rule (see COPPA record), enforceable April 22, 2026.",
       "build": "Not law. Nothing here is required today. If you want to design ahead of it:\n- Build age signals into your product so you can identify users under 17\n- Architect ad systems so targeted ads can be switched off for minors\n- Build an 'eraser button' so parents and teens can delete teen data\nSeveral states (Connecticut, Delaware, Maryland, New Jersey, Oregon, Colorado) already restrict targeted ads and data sales for known minors, so much of this is required at the state level now.",
       "next": null,
       "reviewed": null,
@@ -245,7 +245,7 @@
       "threshold": "Controllers processing data of 35K+ DE consumers/year, or 10K+ DE consumers/year and deriving 20%+ revenue from personal data sales (lower thresholds than most states)",
       "summary": "Delaware's comprehensive privacy law, effective January 1, 2025. Low thresholds (35K consumers). Opt-in consent for sensitive data and consent before selling or targeting ads to known teens 13-17. Consumers can get a list of specific third parties that received their data. Universal opt-out signals required from January 1, 2026. The 60-day cure period ran through 2025 and is now at the AG's discretion. Civil penalties up to $10,000 per violation.",
       "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, correction, deletion, and portability with a 45-day clock and appeal process\n- List of specific third parties that received a consumer's data, available on request\n- Opt-out controls for sale, targeted advertising, and profiling; honor universal opt-out signals (required from January 1, 2026)\n- Opt-in consent for sensitive data\n- Consent before selling or targeting ads to consumers you know are 13-17\n- Data protection assessment before high-risk processing\n- Contracts with every vendor that processes personal data for you",
-      "next": null,
+      "next": "January 1, 2027: HB 380 lowers coverage to 10,000 Delaware consumers, or 5,000 with more than 20% of revenue from data sales. Assessments become required at 50,000 consumers. Sensitive data adds inferences, national origin, neural data, financial account data and government ID numbers. Teen opt-in extends to profiling, and selling sensitive data needs consent plus prior notice.",
       "reviewed": null,
       "checker": {
         "min": 35000,
@@ -319,7 +319,7 @@
       "enforcementDate": "2018-05-25",
       "enforcer": "National Data Protection Authorities (DPAs)",
       "threshold": "Any org processing EU resident personal data, regardless of where the org is located",
-      "summary": "Landmark EU regulation establishing comprehensive data protection rights. Requires lawful basis for processing, data minimization, and purpose limitation. Imposes strict breach notification (72 hrs), DPIAs for high-risk processing, and appointment of DPOs. Fines up to 4% global annual revenue or €20M.",
+      "summary": "Landmark EU regulation establishing comprehensive data protection rights. Requires lawful basis for processing, data minimization, and purpose limitation. Imposes strict breach notification (72 hrs), DPIAs for high-risk processing, and appointment of DPOs. Fines up to 4% global annual revenue or €20M. On October 8, 2026 the Dutch DPA fined Uber €824,990,000 for fully automated driver deactivations (Art. 22) and poor transparency (Art. 13); Uber has appealed. The proposed digital omnibus changes to GDPR and cookie rules aren't law, and the Council hasn't adopted a negotiating mandate.",
       "build": "- Document a lawful basis (consent, contract, legitimate interests, etc.) for each processing purpose before launch\n- Cookie consent banner: no non-essential cookies or trackers until the user opts in (ePrivacy rules), with reject as easy as accept\n- Privacy notice meeting Articles 13-14\n- Request flow for access, deletion, correction, portability, restriction, and objection, answered within one month\n- Records of processing activities (Article 30)\n- DPIA before high-risk processing (large-scale profiling, sensitive data, systematic monitoring)\n- Data processing agreements with every vendor; Standard Contractual Clauses or EU-US Data Privacy Framework certification for transfers to the US\n- Breach detection and a process to notify the regulator within 72 hours\n- Privacy by design and default: minimal data collection and privacy-protective settings out of the box\n- EU representative if you have no EU establishment; DPO if required",
       "next": null,
       "reviewed": null,
@@ -549,7 +549,7 @@
       "threshold": "Controllers processing data of 100K+ KY consumers/year, or 25K+ KY consumers/year and deriving over 50% of revenue from personal data sales",
       "summary": "Kentucky's comprehensive privacy law, effective January 1, 2026. Closely modeled on Virginia's VCDPA. Consent required for sensitive data; data protection assessments required. AG enforces with a 30-day cure period; up to $7,500 per violation.",
       "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, correction, deletion, and portability, with identity verification and a 45-day response clock\n- Appeal process for denied requests\n- Opt-out controls for sale, targeted advertising, and significant-decision profiling\n- Consent screen before collecting sensitive data\n- Data protection assessment before launching targeted ads, data sales, profiling, or sensitive-data features\n- Contracts with every vendor that processes personal data for you",
-      "next": null,
+      "next": "July 1, 2027: HB 692 bars collecting automatic content recognition (ACR) data from smart TVs and monitors without the consumer's consent.",
       "reviewed": null,
       "checker": {
         "min": 100000,
@@ -585,7 +585,7 @@
       "enforcementDate": "2025-10-01",
       "enforcer": "Maryland Attorney General",
       "threshold": "Controllers processing data of 35K+ MD consumers/year, or 10K+ MD consumers/year and deriving 20%+ revenue from personal data sales",
-      "summary": "Maryland's comprehensive privacy law, effective October 1, 2025. One of the most protective state laws — prohibits processing of sensitive data unless strictly necessary (stronger than opt-in consent). Also prohibits selling sensitive data outright in most cases. Requires data minimization: controllers may only process data that is reasonably necessary and proportionate. AG enforces; civil penalties up to $10,000 per violation (first offense) and $25,000 per subsequent violation.",
+      "summary": "Maryland's comprehensive privacy law, effective October 1, 2025. One of the most protective state laws — prohibits processing of sensitive data unless strictly necessary (stronger than opt-in consent). Also prohibits selling sensitive data outright in most cases. Requires data minimization: controllers may only process data that is reasonably necessary and proportionate. HB 711 (effective July 1, 2026) treats inferences that reveal a sensitive characteristic as sensitive data. It also bars knowingly selling personal data to a government unit that engaged in or supported civil immigration enforcement within the prior six months, subject to an exception. AG enforces; civil penalties up to $10,000 per violation (first offense) and $25,000 per subsequent violation.",
       "build": "- Collect only data that is reasonably necessary and proportionate to the service the user asked for; this is a hard limit, not a disclosure\n- Sensitive data: collect or process only when strictly necessary to provide the requested service; consent does not cure it\n- Never sell sensitive data\n- No sale or targeted advertising to users you know, or should have known, are under 18\n- Opt-out controls for sale, targeted advertising, and profiling; honor universal opt-out signals\n- Request flow for access, correction, deletion, and portability with a 45-day clock and appeal process\n- Data protection assessment for each algorithm used in high-risk processing\n- Applies to processing activities from April 1, 2026; audit existing data flows against the necessity standard",
       "next": null,
       "reviewed": null,
@@ -739,7 +739,7 @@
       "threshold": "Controllers processing data of 35K+ NH consumers/year, or 10K+ NH consumers/year and deriving 25%+ revenue from personal data sales",
       "summary": "New Hampshire's comprehensive privacy law, effective January 1, 2025. Closely modeled on Connecticut's CTDPA. Requires opt-in for sensitive data, data protection assessments for high-risk processing, and honoring universal opt-out signals. AG enforces with 60-day cure period through January 1, 2026, then discretionary. Civil penalties up to $10,000 per violation.",
       "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, correction, deletion, and portability with a 45-day clock and appeal process\n- Opt-out controls for sale, targeted advertising, and profiling; honor universal opt-out signals\n- Opt-in consent for sensitive data\n- Consent before selling or targeting ads to consumers you know are 13-15\n- Data protection assessment before high-risk processing\n- Contracts with every vendor that processes personal data for you",
-      "next": null,
+      "next": "January 1, 2027: HB 1460 bans selling personal data of children under 13, even with parental consent.",
       "reviewed": null,
       "checker": {
         "min": 35000,
@@ -775,8 +775,8 @@
       "enforcementDate": "2025-01-15",
       "enforcer": "New Jersey Division of Consumer Affairs (Attorney General)",
       "threshold": "Controllers processing data of 100K+ NJ consumers/year (excluding payment processing), or 25K+ NJ consumers/year and deriving revenue from personal data sales",
-      "summary": "New Jersey's comprehensive privacy law, effective January 15, 2025. Any revenue from selling personal data triggers coverage at 25K consumers, with no percentage floor. Broad sensitive data definition that includes financial information. Opt-in for sensitive data; assessments before high-risk processing starts. AG enforces; no private right of action. The 30-day cure period ended in July 2026.",
-      "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, correction, deletion, and portability with a 45-day clock and appeal process\n- Opt-out controls for sale, targeted advertising, and profiling; honor universal opt-out signals (required since July 15, 2025)\n- Opt-in consent for sensitive data, which includes financial information and status as transgender or non-binary\n- Consent before selling, targeting ads to, or profiling consumers you know are 13-17\n- Data protection assessment before starting high-risk processing, not after\n- Contracts with every vendor that processes personal data for you",
+      "summary": "New Jersey's comprehensive privacy law, effective January 15, 2025. Any revenue from selling personal data triggers coverage at 25K consumers, with no percentage floor. Broad sensitive data definition that includes financial information. Opt-in for sensitive data; assessments before high-risk processing starts. A5328 (signed and effective June 30, 2026) bans selling sensitive data outright, with no consent exception, for every business regardless of size, at up to $50,000 per record. It also creates a data broker registry, with registration open April 1 to June 30, 2027. AG enforces; no private right of action. The 30-day cure period ended in July 2026.",
+      "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, correction, deletion, and portability with a 45-day clock and appeal process\n- Opt-out controls for sale, targeted advertising, and profiling; honor universal opt-out signals (required since July 15, 2025)\n- Opt-in consent for sensitive data, which includes financial information and status as transgender or non-binary\n- Do not sell sensitive data (health, financial, precise geolocation, biometric, known children's data and the other listed categories) to anyone, even with the consumer's consent\n- Consent before selling, targeting ads to, or profiling consumers you know are 13-17\n- Data protection assessment before starting high-risk processing, not after\n- Contracts with every vendor that processes personal data for you",
       "next": null,
       "reviewed": null,
       "checker": {
@@ -790,7 +790,7 @@
         "anySensitive": false,
         "anySale": false,
         "unlessSmall": false,
-        "dutyBelow": null
+        "dutyBelow": "Selling sensitive data is banned for every business with New Jersey consumers, regardless of size, even with consent (A5328, June 30, 2026)."
       },
       "req": {
         "gpc": true,
@@ -967,7 +967,7 @@
       "threshold": "Controllers with $25M+ annual revenue that process data of 100K+ UT consumers/year, or 25K+ UT consumers/year and derive 50%+ revenue from personal data sales",
       "summary": "Utah's privacy law, effective December 31, 2023. The most business-friendly state law: requires $25M revenue plus a volume threshold, has no data protection assessment requirement, and sensitive data needs only notice and an opt-out. Permanent 30-day cure period. AG and Division of Consumer Protection enforce; civil penalties up to $7,500 per violation.",
       "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, deletion, and portability with a 45-day response clock\n- Opt-out controls for sale and targeted advertising\n- Clear notice and an opt-out before processing sensitive data (Utah does not require opt-in)\n- Reasonable data security\n- Contracts with every vendor that processes personal data for you",
-      "next": null,
+      "next": "January 1, 2027: HB 357 applies the UCPA to motor vehicle manufacturers that sell or lease vehicles in Utah and collect vehicle data, regardless of the usual thresholds; model year 2030 and later vehicles need in-vehicle privacy controls. July 1, 2027: the Digital Choice Act (social media data portability) takes effect after HB 408 delayed it a year.",
       "reviewed": null,
       "checker": {
         "min": 100000,
@@ -1003,7 +1003,7 @@
       "enforcementDate": "2023-01-01",
       "enforcer": "Virginia Attorney General",
       "threshold": "Controllers that process data of 100K+ VA consumers/year, or 25K+ VA consumers/year and derive 50%+ revenue from personal data sales",
-      "summary": "Virginia's comprehensive state privacy law, effective January 1, 2023. Grants consumers rights to access, correct, delete, port, and opt out of sale, targeted advertising, and profiling. Controllers must conduct data protection assessments for high-risk processing. No private right of action — AG enforces with 30-day cure period and up to $7,500 per violation. Exemptions for HIPAA-covered entities, FERPA-covered institutions, nonprofits, and government entities.",
+      "summary": "Virginia's comprehensive state privacy law, effective January 1, 2023. Grants consumers rights to access, correct, delete, port, and opt out of sale, targeted advertising, and profiling. Controllers must conduct data protection assessments for high-risk processing. No private right of action — AG enforces with 30-day cure period and up to $7,500 per violation. Exemptions for HIPAA-covered entities, FERPA-covered institutions, nonprofits, and government entities. SB 338 (effective July 1, 2026) restricts selling precise geolocation data. It also requires COPPA-compliant parental consent before collecting a child's precise geolocation, limits that collection to what's reasonably necessary, and requires a signal shown to the child while collection runs. SB 854's one-hour daily social media limit for users under 16 (effective January 1, 2026) is blocked by a preliminary injunction; the Fourth Circuit hears Virginia's appeal October 28, 2026.",
       "build": "- Privacy notice listing data categories, purposes, third parties, and how to exercise rights\n- Request flow for access, correction, deletion, and portability, with identity verification and a 45-day response clock\n- Appeal process for denied requests, with a link to the AG complaint form\n- Opt-out controls for sale, targeted advertising, and significant-decision profiling\n- Opt-in consent screen before collecting sensitive data; parental consent for known children under 13\n- Data protection assessment before launching targeted ads, data sales, profiling, or sensitive-data features\n- Contracts with every vendor that processes personal data for you",
       "next": null,
       "reviewed": null,
