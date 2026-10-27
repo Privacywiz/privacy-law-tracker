@@ -1,7 +1,45 @@
 {
-  "synced": "2026-10-27T20:39:04.111Z",
+  "synced": "2026-10-27T21:44:15.035Z",
   "source": "Airtable: Privacy Law Tracker",
   "laws": [
+    {
+      "id": "recxzZIzd4zn769X2",
+      "name": "Alabama Personal Data Protection Act",
+      "abbr": "APDPA",
+      "status": "Pending",
+      "category": "US State",
+      "jurisdiction": "Alabama",
+      "state": "AL",
+      "trigger": "State thresholds",
+      "effective": "2027-05-01",
+      "enforcementDate": "2027-05-01",
+      "enforcer": "Alabama Attorney General",
+      "threshold": "Businesses that operate in Alabama or target Alabama residents and either control or process the personal data of more than 25,000 Alabama consumers (not counting data processed solely to complete a payment transaction), or get more than 25% of gross revenue from selling personal data (no consumer minimum). Businesses with fewer than 500 employees, and nonprofits with fewer than 100 employees, are exempt if they don't sell personal data.",
+      "summary": "Alabama's comprehensive privacy law, signed April 17, 2026 and effective May 1, 2027. It covers businesses handling data of more than 25,000 Alabama consumers, or getting more than 25% of revenue from data sales, but businesses under 500 employees that don't sell personal data are exempt. Opt-in consent for sensitive data, COPPA-compliant handling of data from known children under 13, and consent before selling or targeting ads to known teens 13 to 15. Unlike most state laws, there's no appeal right and no data protection assessment requirement. The Attorney General enforces with a 45-day cure period that doesn't expire; civil penalties up to $15,000 per violation.",
+      "build": "- Privacy notice listing data categories, purposes, data shared with third parties, how to contact you, and how to exercise rights\n- Clear disclosure if you sell personal data or use it for targeted advertising\n- Request flow for access, correction, deletion, and portability with a 45-day response clock (one 45-day extension with notice); no new account required to submit\n- Clear and conspicuous opt-out link (or up-to-date contact info) for sale and targeted advertising, plus opt-out of profiling for solely automated significant decisions\n- If an opt-out preference signal conflicts with a user's existing setting or loyalty program, follow the signal (you may notify them of the conflict and let them confirm)\n- Opt-in consent before processing sensitive data, with a way to revoke consent\n- Handle data from known children under 13 per COPPA\n- Consent before selling or targeting ads to consumers you know are 13 to 15\n- No denying service or changing price because someone opted out (bona fide loyalty programs are allowed)\n- Contracts with every vendor that processes personal data for you",
+      "next": "May 1, 2027: the law takes effect.",
+      "reviewed": null,
+      "checker": {
+        "min": 25001,
+        "alt": 1,
+        "altPct": 25,
+        "altInclusive": false,
+        "requiresRevenue": false,
+        "revenueAlone": false,
+        "volumeOnlyIfSelling": false,
+        "anySensitive": false,
+        "anySale": false,
+        "unlessSmall": false,
+        "dutyBelow": null
+      },
+      "req": {
+        "gpc": false,
+        "sensitive": "Opt-in consent",
+        "assessment": false,
+        "days": 45,
+        "cure": "45 days"
+      }
+    },
     {
       "id": "recC8YpqGy5SnH1Qx",
       "name": "American Privacy Rights Act",
@@ -304,6 +342,44 @@
         "assessment": false,
         "days": null,
         "cure": null
+      }
+    },
+    {
+      "id": "recqSmM9QZ55l8Zjt",
+      "name": "Florida Digital Bill of Rights",
+      "abbr": "FDBR",
+      "status": "In Effect",
+      "category": "US State",
+      "jurisdiction": "Florida",
+      "state": "FL",
+      "trigger": "State thresholds",
+      "effective": "2024-07-01",
+      "enforcementDate": "2024-07-01",
+      "enforcer": "Florida Attorney General (Department of Legal Affairs)",
+      "threshold": "For-profit businesses that do business in Florida, collect consumers' personal data and decide how it's processed, make more than $1 billion in global gross annual revenue, and also (a) get 50% or more of global gross annual revenue from selling online ads, including targeted ads, (b) operate a consumer smart speaker and voice command service with an integrated virtual assistant connected to a cloud service that uses hands-free verbal activation (vehicle devices from automakers excluded), or (c) operate an app store or digital distribution platform with at least 250,000 different apps. Affiliates that control or are controlled by such a business are covered too. Two duties reach further: any for-profit business doing business in Florida that collects personal data needs consent and a posted notice to sell sensitive data, and online platforms (social media, online games) likely to be predominantly accessed by children under 18 face separate restrictions regardless of size.",
+      "summary": "Florida's privacy law, effective July 1, 2024. Full duties reach only a handful of very large companies: over $1 billion in global revenue plus a big online ad business, a voice-assistant smart speaker, or an app store with 250,000+ apps. But any for-profit business that collects Floridians' personal data needs consent before selling sensitive data and must post \"NOTICE: This website may sell your sensitive personal data.\" A separate section (s. 501.1735) restricts how social media and online game platforms likely to be predominantly accessed by kids under 18 profile children and collect their data, at any size. Unusual features: an opt-out of collection through voice or facial recognition, a ban on using device voice, face or video features for surveillance when not in active use, a retention schedule with a 2-year outer limit, and a ranking-factor disclosure for search engines. The Attorney General enforces exclusively, with civil penalties up to $50,000 per violation, tripled for violations involving known children, failing to delete or correct after a request, or continuing to sell or share after an opt-out. A 45-day cure period is at the AG's discretion and never applies to known-child violations. No private right of action and no universal opt-out signal requirement. First big case: the AG sued Roku in October 2025 over children's data; it settled June 26, 2026 with no fine and an estimated $25 million in child-protection engineering.",
+      "build": "- Privacy notice, updated at least once a year, listing data categories (including sensitive data), purposes, categories shared and third parties, how to exercise rights and appeal, and your request methods\n- If you sell sensitive data, post the exact notice \"NOTICE: This website may sell your sensitive personal data.\" (applies to any for-profit business collecting personal data, not just $1B+ controllers); biometric sales need \"NOTICE: This website may sell your biometric personal data.\"\n- Clear disclosure of any sale or targeted advertising and how to opt out\n- At least two secure, reliable request methods, without forcing anyone to create a new account\n- Request flow for access, correction, deletion, and portability with a 45-day clock (one 15-day extension if you tell the consumer within the first 45 days) and an appeal answered in writing within 60 days\n- Let a parent or guardian exercise rights for a known child\n- Opt-out controls for sale, targeted advertising, profiling with legal or similarly significant effects, sensitive data processing, and collection through voice or facial recognition features\n- Opt-in consent before processing sensitive data; known children 13-17 must give affirmative authorization, and under-13 data must follow COPPA\n- Consent before selling sensitive data (applies to any for-profit business collecting personal data)\n- Don't use a device's voice recognition, facial recognition, video or audio recording features for surveillance when the consumer isn't actively using them, unless they expressly allow it\n- Retention schedule that stops using or keeping personal data once the purpose is met, the contract ends, or 2 years after the consumer's last interaction, unless an exemption applies\n- Data protection assessment for targeted advertising, sales, risky profiling, sensitive data, and other heightened-risk processing\n- If you run a search engine, publish a plain-language description of your main ranking factors, including any political or ideological weighting\n- If you run a social media platform or online game likely to be predominantly accessed by under-18s (any size): no harmful processing or unnecessary profiling of children, no unnecessary collection or precise geolocation, a visible signal while collecting geolocation, and no dark patterns\n- Contracts with every vendor that processes personal data for you",
+      "next": null,
+      "reviewed": null,
+      "checker": {
+        "min": null,
+        "alt": null,
+        "altPct": null,
+        "altInclusive": false,
+        "requiresRevenue": false,
+        "revenueAlone": false,
+        "volumeOnlyIfSelling": false,
+        "anySensitive": false,
+        "anySale": false,
+        "unlessSmall": false,
+        "dutyBelow": "Florida's full law covers only companies with over $1 billion in global revenue that also run a large online ad business, a voice-assistant smart speaker or a 250,000-app store, so confirm whether you meet that test; even if you don't, any for-profit business selling Floridians' sensitive data needs consent and a posted notice, and kid-focused social media and gaming platforms have separate duties."
+      },
+      "req": {
+        "gpc": false,
+        "sensitive": "Opt-in consent",
+        "assessment": true,
+        "days": 45,
+        "cure": "Discretionary"
       }
     },
     {
@@ -801,6 +877,44 @@
       }
     },
     {
+      "id": "reccLneEAcX2OLTXd",
+      "name": "Oklahoma Consumer Data Privacy Act",
+      "abbr": "OCDPA",
+      "status": "Pending",
+      "category": "US State",
+      "jurisdiction": "Oklahoma",
+      "state": "OK",
+      "trigger": "State thresholds",
+      "effective": "2027-01-01",
+      "enforcementDate": "2027-01-01",
+      "enforcer": "Oklahoma Attorney General",
+      "threshold": "Businesses that do business in Oklahoma or target products or services to Oklahoma residents and, in a calendar year, control or process personal data of at least 100,000 Oklahoma consumers, or at least 25,000 Oklahoma consumers while deriving over 50% of gross revenue from the sale of personal data. \"Sale\" means an exchange for monetary consideration only. Consumers acting in a commercial or employment context don't count. Exempt: state agencies and political subdivisions, GLBA financial institutions, HIPAA covered entities and business associates, nonprofits, and higher education institutions",
+      "summary": "Oklahoma's comprehensive privacy law, signed March 20, 2026 and effective January 1, 2027. It follows the Virginia model closely and is one of the more business-friendly state laws: \"sale\" covers only exchanges for money, there's no requirement to honor universal opt-out signals like GPC, and there are no authorized-agent provisions. Grants access, correction, deletion, portability, and opt-outs for sale, targeted advertising, and significant profiling. Sensitive data needs opt-in consent, and data from a known child under 13 must be handled under COPPA. No special teen rules. The AG enforces exclusively with a 30-day cure period that doesn't sunset; civil penalties up to $7,500 per violation, plus attorney fees and investigation costs. No private right of action.",
+      "build": "- Privacy notice listing data categories, purposes, how to exercise rights and appeal, and data categories and third parties you share with\n- At least two secure, reliable ways to submit requests (an online-only business with a direct consumer relationship can offer just an email address)\n- Request flow for access, correction, deletion, and portability with a 45-day response clock (one 45-day extension if you tell the consumer within the first 45 days); free up to twice a year\n- Appeal process with a written decision within 60 days; if you deny an appeal, give the consumer a way to contact the Oklahoma AG\n- Opt-out controls for sale, targeted advertising, and profiling with legal or similarly significant effects\n- Opt-in consent before processing sensitive data; for a known child under 13, follow COPPA\n- Consent before using data for purposes not reasonably necessary to or compatible with the ones you disclosed\n- Data protection assessment before targeted advertising, sale, risky profiling, sensitive data processing, or other high-risk processing\n- Contracts with every vendor that processes personal data for you",
+      "next": "January 1, 2027: the law takes effect.",
+      "reviewed": null,
+      "checker": {
+        "min": 100000,
+        "alt": 25000,
+        "altPct": 50,
+        "altInclusive": false,
+        "requiresRevenue": false,
+        "revenueAlone": false,
+        "volumeOnlyIfSelling": false,
+        "anySensitive": false,
+        "anySale": false,
+        "unlessSmall": false,
+        "dutyBelow": null
+      },
+      "req": {
+        "gpc": false,
+        "sensitive": "Opt-in consent",
+        "assessment": true,
+        "days": 45,
+        "cure": "30 days"
+      }
+    },
+    {
       "id": "rechRJxxRYOa63iuU",
       "name": "Oregon Consumer Privacy Act",
       "abbr": "OCPA",
@@ -1026,6 +1140,44 @@
         "assessment": true,
         "days": 45,
         "cure": "30 days"
+      }
+    },
+    {
+      "id": "recoXQdakx3uDu5kD",
+      "name": "Washington My Health My Data Act",
+      "abbr": "MHMDA",
+      "status": "In Effect",
+      "category": "Sector-Specific",
+      "jurisdiction": "Washington",
+      "state": "WA",
+      "trigger": "State thresholds",
+      "effective": "2024-03-31",
+      "enforcementDate": "2024-03-31",
+      "enforcer": "Washington Attorney General (Consumer Protection Act); private lawsuits by injured consumers",
+      "threshold": "Any legal entity that does business in Washington or targets products or services to Washington consumers and, alone or with others, decides why and how consumer health data is collected, processed, shared or sold. No revenue or volume threshold. \"Consumer\" means a Washington resident or anyone whose health data is collected in Washington, acting in a personal or household context (not employees). Small businesses (fewer than 100,000 consumers' health data in a calendar year, or less than 50% of gross revenue from consumer health data and fewer than 25,000 consumers) are covered too; they just had until June 30, 2024. The geofencing ban applies to any person. Excludes government agencies, tribal nations and their contracted service providers, and data already covered by HIPAA, GLBA, FCRA, FERPA and similar regimes.",
+      "summary": "Washington's consumer health data law, not a comprehensive privacy law. Obligations started March 31, 2024 (June 30, 2024 for small businesses). The geofencing ban took effect July 23, 2023. \"Consumer health data\" is broad: conditions, medications, symptoms, reproductive and gender-affirming care, biometric and genetic data, precise location that could show someone seeking care, and health inferences drawn from non-health data (for example by algorithms). There's no size threshold. You need separate opt-in consent to collect and to share health data, unless it's necessary for a service the consumer asked for, and a signed written authorization from the consumer to sell it. You need a standalone Consumer Health Data Privacy Policy linked from your homepage. Geofences within 2,000 feet of an in-person health care provider can't be used to track visitors, collect their health data or target them with health messages or ads. Violations count as violations of the Consumer Protection Act, so the AG can sue (up to $7,500 per violation) and injured consumers can sue for actual damages, attorney fees and up to triple damages capped at $25,000. No cure period.",
+      "build": "- Standalone Consumer Health Data Privacy Policy with its own prominent homepage link, listing categories collected, purposes and uses, sources, categories shared, the third parties and specific affiliates you share with, and how to exercise rights\n- Separate opt-in consent to collect consumer health data, unless collection is necessary to provide a product or service the consumer asked for\n- A second, separate opt-in consent to share consumer health data, distinct from the collection consent\n- Consent requests that state the categories, purpose and uses, types of recipients, and how to withdraw; no consent through broad terms of use, hovering or closing content, or dark patterns\n- New disclosure and fresh consent before collecting new categories of health data or using it for new purposes\n- Signed, standalone written authorization before selling consumer health data, naming the buyer and seller and expiring after one year; keep copies for six years\n- Request flow to confirm and access health data, including a list of all third parties and affiliates you shared or sold it with and their contact details\n- Withdrawal of consent to collection and sharing\n- Deletion that reaches archives and backups (within six months) and notice to all affiliates, processors, contractors and third parties so they delete too\n- 45-day response clock, one 45-day extension with notice, and no new account required to submit a request\n- Appeal process with a written answer within 45 days and AG contact info if you deny it\n- No geofencing within 2,000 feet of in-person health care providers to track visitors, collect their health data, or send health-related messages or ads\n- Access limited to staff and processors who need it, plus reasonable data security\n- Binding contracts with every processor that handles health data for you\n- No discrimination against consumers for exercising their rights",
+      "next": null,
+      "reviewed": null,
+      "checker": {
+        "min": null,
+        "alt": null,
+        "altPct": null,
+        "altInclusive": false,
+        "requiresRevenue": false,
+        "revenueAlone": false,
+        "volumeOnlyIfSelling": false,
+        "anySensitive": true,
+        "anySale": false,
+        "unlessSmall": false,
+        "dutyBelow": null
+      },
+      "req": {
+        "gpc": false,
+        "sensitive": "Opt-in consent",
+        "assessment": false,
+        "days": 45,
+        "cure": "None"
       }
     }
   ]
