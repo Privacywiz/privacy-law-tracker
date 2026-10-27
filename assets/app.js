@@ -45,7 +45,8 @@ function evaluate(laws, a, picked){
     const proposed = L.status==="Proposed";
     if(L.trigger==="State thresholds" && L.state){
       const c = est[L.state] || 0, ch = L.checker; let r;
-      if((r = covered(L,c,a))) return {L, level:"apply", why:r};
+      const pending = L.status==="Pending" && L.effective && new Date(L.effective+"T12:00:00") > new Date();
+      if((r = covered(L,c,a))) return pending ? {L, level:"likely", why:`Takes effect ${fmtDate(L.effective)}. ${r}, so plan to comply by then.`} : {L, level:"apply", why:r};
       if(c>0 && covered(L,Math.round(c*1.5),a)) return {L, level:"likely", why:`About ${fmt(c)} ${NAMES[L.state]} users, close to the threshold. Count your actual users here before deciding.`};
       if(ch.unlessSmall && c>0 && a.small && a.sensitive && a.sells) return {L, level:"likely", why:"The small-business exception applies, but selling sensitive data still needs consent."};
       if(ch.dutyBelow && c>0) return {L, level:"likely", why:ch.dutyBelow};
@@ -117,7 +118,7 @@ function Questionnaire({a, set, edited, reset, pickCount}){
 function ArchMap({out, a, picked, view, setView, onTile}){
   const byState = {}; for(const r of out) if(r.L.state && r.L.trigger!=="Hidden" && !(byState[r.L.state] && byState[r.L.state].L.trigger==="State thresholds")) byState[r.L.state] = r;
   const tiles = LAYOUT.map(([st,col,row])=>{
-    const r = byState[st], L = r && r.L, bioOnly = L && L.trigger==="Biometrics";
+    const r = byState[st], L = r && r.L, bioOnly = L && (L.trigger==="Biometrics" || L.category==="Sector-Specific");
     let cls = "tile", mk = null, label = NAMES[st], sub = null;
     if(view==="all"){
       if(L){ cls += bioOnly?" bio":" law"; sub = L.abbr.split(" ")[0]; label += `: ${L.name}`; }
@@ -134,7 +135,7 @@ function ArchMap({out, a, picked, view, setView, onTile}){
       mk ? h("span",{className:"mk"},mk) : null, h("span",null,st), sub ? h("span",{className:"sub"},sub) : null);
   });
   const legend = view==="all"
-    ? [["var(--surface-raised)","Comprehensive privacy law"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Biometric law only"],["transparent","No comprehensive law (breach notification law still applies)",true]]
+    ? [["var(--surface-raised)","Comprehensive privacy law"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Biometric or health data law only"],["transparent","No comprehensive law (breach notification law still applies)",true]]
     : [["var(--sapphire)","Applies to you (check mark)"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Confirm: close to threshold (alert mark)"],["var(--surface-raised)","Law exists, not triggered"],["transparent","No comprehensive law (breach notification law still applies)",true]];
   const fed = out.filter(r=>!r.L.state);
   return h("section",{className:"arch","aria-labelledby":"mapH"},
@@ -287,7 +288,7 @@ function App({data}){
               ]}))))
           : h("p",{className:"empty body muted"},"No laws match. Try a different search or set Show to all laws.")))),
     h(G.Disclaimer,{heading:"Informational only."},"This page screens for laws that may apply based on your answers and population-based estimates of users per state. It is not legal advice and doesn't create an attorney-client relationship. Confirm results with counsel before you launch, especially anything marked Confirm."),
-    h("p",{className:"body-small muted foot"},`Maintained by Asia Parks, CIPP/US. Data last synced ${fmtDate(data.synced)}. Not tracked yet: Washington's My Health My Data Act, Florida's Digital Bill of Rights, and state children's codes. California adjusts its $25M revenue threshold for inflation.`));
+    h("p",{className:"body-small muted foot"},`Maintained by Asia Parks, CIPP/US. Data last synced ${fmtDate(data.synced)}. Not tracked yet: state children's codes and data breach notification laws. California adjusts its $25M revenue threshold for inflation.`));
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
