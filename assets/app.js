@@ -121,21 +121,21 @@ function ArchMap({out, a, picked, view, setView, onTile}){
     let cls = "tile", mk = null, label = NAMES[st], sub = null;
     if(view==="all"){
       if(L){ cls += bioOnly?" bio":" law"; sub = L.abbr.split(" ")[0]; label += `: ${L.name}`; }
-      else label += ": no comprehensive privacy law";
+      else label += ": no comprehensive privacy law (breach notification law applies)";
     } else {
       const inScope = a.where==="all" || picked.has(st);
       if(inScope && r && r.level==="apply"){ cls+=" apply"; mk=icon("check",11); label += `: ${L.abbr} applies`; }
       else if(inScope && r && r.level==="likely"){ cls+=" likely"; mk=icon("alert",11); label += `: ${L.abbr}, confirm`; }
       else if(L){ cls += bioOnly?" bio":" law"; label += `: ${L.abbr} not triggered`; }
-      else label += ": no comprehensive privacy law";
+      else label += ": no comprehensive privacy law (breach notification law applies)";
       if(a.where==="pick" && picked.has(st)){ cls+=" picked"; label += " (selected)"; }
     }
     return h("button",{key:st,type:"button",className:cls,style:{gridColumn:col+1,gridRow:row+1},title:label,"aria-label":label,onClick:()=>onTile(st, L)},
       mk ? h("span",{className:"mk"},mk) : null, h("span",null,st), sub ? h("span",{className:"sub"},sub) : null);
   });
   const legend = view==="all"
-    ? [["var(--surface-raised)","Comprehensive privacy law"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Biometric law only"],["transparent","No comprehensive law",true]]
-    : [["var(--sapphire)","Applies to you (check mark)"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Confirm: close to threshold (alert mark)"],["var(--surface-raised)","Law exists, not triggered"],["transparent","No comprehensive law",true]];
+    ? [["var(--surface-raised)","Comprehensive privacy law"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Biometric law only"],["transparent","No comprehensive law (breach notification law still applies)",true]]
+    : [["var(--sapphire)","Applies to you (check mark)"],["linear-gradient(135deg,var(--rose-pastel),var(--blush))","Confirm: close to threshold (alert mark)"],["var(--surface-raised)","Law exists, not triggered"],["transparent","No comprehensive law (breach notification law still applies)",true]];
   const fed = out.filter(r=>!r.L.state);
   return h("section",{className:"arch","aria-labelledby":"mapH"},
     h("div",{className:"arch-crown"},
@@ -161,7 +161,8 @@ function Verdict({apply, likely, watch}){
         h("p",{className:"body muted"},"Users in Texas or Nebraska change that unless you're an SBA small business."),
       h("div",{className:"rest body-small muted"},
         h("span",null, `${likely.length} to confirm with counsel`),
-        h("span",null, `${watch.length} proposed ${watch.length===1?"law":"laws"} to watch`))));
+        h("span",null, `${watch.length} proposed ${watch.length===1?"law":"laws"} to watch`)),
+      h("p",{className:"breach body-small muted"},"Not tracked here: every state, D.C. and the U.S. territories have a data breach notification law. If you hold residents' personal information, you must notify them (and in many states the attorney general) after a breach, whatever your size and whether or not a comprehensive privacy law applies.")));
 }
 
 function Requirements({rows}){
